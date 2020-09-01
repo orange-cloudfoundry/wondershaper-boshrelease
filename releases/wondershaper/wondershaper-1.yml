@@ -1,0 +1,14 @@
+name: wondershaper
+version: "1"
+commit_hash: 162e14c
+uncommitted_changes: false
+jobs:
+- name: wondershaper
+  version: 9a4a153b81ae4bc9c2f05594917f4410c32a4f9741245dab0f42cc385b52ff75
+  fingerprint: 9a4a153b81ae4bc9c2f05594917f4410c32a4f9741245dab0f42cc385b52ff75
+  sha1: sha256:1d163154b252ccc156b2ebb23be997112d24582b6e93cf3c2e9e1dcb35f26a4f
+  packages: []
+license:
+  version: cf0ca1fe65dee9607c7bb9460a3f20835e582cbb7f5b2c3625fba2e21d7e91b9
+  fingerprint: cf0ca1fe65dee9607c7bb9460a3f20835e582cbb7f5b2c3625fba2e21d7e91b9
+  sha1: sha256:59d0bb9ddcd093e36d9d03a9ad66302e5d0c9334682bb3044c609550f80ee41f
