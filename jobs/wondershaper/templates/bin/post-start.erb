@@ -1,6 +1,17 @@
 #!/bin/bash
 
-
+# Set config
+# > -d <rate> Set maximum download rate (in Kbps) and/or
+# > -u <rate> Set maximum upload rate (in Kbps)
 /var/vcap/jobs/wondershaper/bin/wondershaper -a <%= p('interface')%> -d  <%= p('dspeed')%> -u <%= p('uspeed')%>
+
+# Show assigned config 
+# See https://github.com/magnific0/wondershaper#usage
+# > -s Show the current status of adapter
 /var/vcap/jobs/wondershaper/bin/wondershaper -sa <%= p('interface')%> 
+
+# Note: pre-start are not guaranteed to always start in bosh life-cycle, therefore it is recommended to run this release
+# along with https://github.com/orange-cloudfoundry/node-hardening-release/blob/266e7544007a1af4cc613859ac566800a0e17807/jobs/fail-on-raw-reboot/spec#L15-L17
+# More at https://github.com/orange-cloudfoundry/paas-templates/issues/1878
+
 exit 0
