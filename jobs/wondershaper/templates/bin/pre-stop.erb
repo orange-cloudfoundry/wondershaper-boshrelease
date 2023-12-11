@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Clear all limits when stopped, so that if the job gets removed it leaves the system without residual tc configs
+# See https://github.com/magnific0/wondershaper#usage
+# > -c Clear the limits from adapter
+# > -a <adapter> Set the adapter
 /var/vcap/jobs/wondershaper/bin/wondershaper -ca <%= p('interface')%>
 
 exit 0;
