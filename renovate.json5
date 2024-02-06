@@ -24,10 +24,6 @@
   ], //See also possible support for multiple base branches, one per K8S minor version https://docs.renovatebot.com/configuration-options/#basebranches
   packageRules: [
     {
-      matchDepPatterns: [ 'src/wondershaper'],
-      commitMessagePrefix: 'feature'
-    },
-    {
       description: "Add common labels",
       matchDepPatterns: ["*"],
       addLabels: [
