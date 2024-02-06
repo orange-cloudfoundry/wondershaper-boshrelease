@@ -5,8 +5,11 @@
     ':disableRateLimiting',
   ],
   enabledManagers: [
-    "github-actions",
+    "github-actions", "git-submodules"
   ],
+  "git-submodules": {
+    enabled: true
+  },
   ignorePaths: [
     'packages/**',
     'releases/**',
