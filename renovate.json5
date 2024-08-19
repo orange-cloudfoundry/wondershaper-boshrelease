@@ -6,10 +6,11 @@
     'github>orange-cloudfoundry/renovate-public-presets:boshreleases-default.json5'
   ],
   enabledManagers: [
-    "github-actions", "git-submodules"
+    'github-actions',
+    'git-submodules',
   ],
-  "git-submodules": {
-    enabled: true
+  'git-submodules': {
+    enabled: true,
   },
   ignorePaths: [
     'packages/**',
@@ -25,14 +26,16 @@
   ], //See also possible support for multiple base branches, one per K8S minor version https://docs.renovatebot.com/configuration-options/#basebranches
   packageRules: [
     {
-      description: "Add common labels",
-      matchDepPatterns: ["*"],
+      description: 'Add common labels',
       addLabels: [
         // See full list of fields available at https://docs.renovatebot.com/templates/#other-available-fields
-        "datasource/{{datasource}}",
-        "depName/{{depNameSanitized}}",
-        "manager/{{manager}}",
-      ]
+        'datasource/{{datasource}}',
+        'depName/{{depNameSanitized}}',
+        'manager/{{manager}}',
+      ],
+      matchDepNames: [
+        '/*/',
+      ],
     },
   ],
 }
