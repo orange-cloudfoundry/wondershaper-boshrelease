@@ -19,13 +19,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           fetch-depth: 0
 
       - name: Bump version
         id: bump-version
-        uses: ietf-tools/semver-action@778d1d5b7af80aa43f50104116b8363e7fc0d1ef # v1.10.1
+        uses: ietf-tools/semver-action@000ddb2ebacad350ff2a15382a344dc05ea4c0a4 # v1.10.2
         with:
           token: ${{ github.token }}
           branch: master
@@ -46,7 +46,7 @@ jobs:
       # see https://github.com/ncipollo/release-action
       - name: create github release
         id: create-github-release
-        uses: ncipollo/release-action@440c8c1cb0ed28b9f43e4d1d670870f059653174 # v1.16.0
+        uses: ncipollo/release-action@bcfe5470707e8832e12347755757cec0eb3c22af # v1.18.0
         with:
           tag: ${{ steps.create-bosh-release.outputs.tagged_version }}
           draft: false
