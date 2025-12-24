@@ -19,13 +19,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           fetch-depth: 0
 
       - name: Bump version
         id: bump-version
-        uses: ietf-tools/semver-action@778d1d5b7af80aa43f50104116b8363e7fc0d1ef # v1.10.1
+        uses: ietf-tools/semver-action@c90370b2958652d71c06a3484129a4d423a6d8a8 # v1.11.0
         with:
           token: ${{ github.token }}
           branch: master
@@ -34,7 +34,7 @@ jobs:
 
       - name: create bosh release
         id: create-bosh-release
-        uses: orange-cloudfoundry/create-bosh-release-action@fd4ddefcec42563de953491bb56286f8db2e4862 # v1.1.0
+        uses: orange-cloudfoundry/create-bosh-release-action@019253a01b95116280610ab24bfbd73cee695d79 # v1.2.2
         with:
           target_branch: ${{github.ref_name}}
           tag_name: ${{ steps.bump-version.outputs.next}}
@@ -46,7 +46,7 @@ jobs:
       # see https://github.com/ncipollo/release-action
       - name: create github release
         id: create-github-release
-        uses: ncipollo/release-action@440c8c1cb0ed28b9f43e4d1d670870f059653174 # v1.16.0
+        uses: ncipollo/release-action@b7eabc95ff50cbeeedec83973935c8f306dfcd0b # v1.20.0
         with:
           tag: ${{ steps.create-bosh-release.outputs.tagged_version }}
           draft: false
